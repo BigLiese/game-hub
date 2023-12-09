@@ -5,6 +5,8 @@ import ms from "ms";
 import useGameQueryStore from "../store";
 
 export interface Game {
+  description_raw: string;
+  slug: string;
   id: number;
   name: string;
   background_image: string;
