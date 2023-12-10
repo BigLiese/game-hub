@@ -22,7 +22,7 @@ const GameGrid = () => {
 
   const fetchGamesCount =
     data?.pages.reduce((total, page) => total + page.results.length, 0) || 0;
-
+  //hasMore={!!hasNextPage} means if it's undefined, it will be transformed to a boolean false
   return (
     <InfiniteScroll
       dataLength={fetchGamesCount}
@@ -30,8 +30,6 @@ const GameGrid = () => {
       next={() => fetchNextPage()}
       loader={<Spinner />}
     >
-      //hasMore={!!hasNextPage} means if it's undefined, it will be transformed
-      to a boolean false
       <SimpleGrid
         columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
         spacing={6}
